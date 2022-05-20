@@ -1,0 +1,44 @@
+<html>
+    <head>
+    	<title>Villas At Monarch Beach</title>
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140200538-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-140200538-1');
+        </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    	<link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+    	<div id="mapContainer">
+            <div id="myMap"></div>
+        	<div id="overlay">
+        		<h1></h1>
+        	</div>
+        	<div id="panoContain">
+	        	<div id="panoContainer">
+					<button id="x" onclick="$('#panoContain').css('display','None');">X</button>
+					<iframe id="panoFrame" src="" allowfullscreen></iframe>
+				</div>
+			</div>
+        	<div id="markerCard">
+        		<h1 id="markerTitle" class="markerAnimate"></h1>
+                    <h2 id="v25">25 Ft</h2>
+                    <h2 id="v35">35 Ft</h2>
+                    <h2 id="v45">45 Ft</h2>
+            
+                
+        	</div>
+        </div>
+        <script src="libs/jquery/jquery-3.1.1.min.js"></script>
+        <script src="map.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_VAdYgK7EC2YY-sRzELZKmd77fYNDSuQ&callback=myMap"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    </body>
+</html>
