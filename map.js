@@ -33,8 +33,8 @@ const styles = {
 var map;
 function myMap() {
     var mapProp= {
-    center:new google.maps.LatLng( 33.478413, -117.715661),
-    zoom:19,
+    center:new google.maps.LatLng( 33.47903305470248, -117.7135598727768),
+    zoom:18,
     //maxZoom: 20,
     minZoom: 13,
     mapTypeId: 'hybrid',
@@ -51,7 +51,7 @@ function myMap() {
         icon: '/VillasAtMonarchBeach/pano1.png'
     },
     parking: {
-        icon: '/VillasAtMonarchBeach/pano2.png'
+        icon: 'pano2.png'
     },
     backyard: {
         icon: 'pano3.png'
@@ -100,6 +100,72 @@ function myMap() {
             position: new google.maps.LatLng( 33.478140, -117.714544),
             type: 'backyard',
         },
+{
+	name: 'Shot 1',
+	info: '1',
+	position: new google.maps.LatLng(33.47959848312619, -117.7134319815632),
+	type: 'parking',
+},
+{
+	name: 'Shot 2',
+	info: '2',
+	position: new google.maps.LatLng(33.47903305470248, -117.7135598727768),
+	type: 'parking',
+},
+{
+	name: 'Shot 3',
+	info: '3',
+	position: new google.maps.LatLng(33.47807635920005, -117.7139133030601),
+	type: 'parking',
+},
+{
+	name: 'Shot 4',
+	info: '4',
+	position: new google.maps.LatLng(33.47750051272683, -117.7141905360207),
+	type: 'parking',
+},
+{
+	name: 'Shot 5',
+	info: '5',
+	position: new google.maps.LatLng(33.47959421646184, -117.7150887208995),
+	type: 'parking',
+},
+{
+	name: 'Shot 6',
+	info: '6',
+	position: new google.maps.LatLng(33.47900472136796, -117.7125447130566),
+	type: 'parking',
+},
+{
+	name: 'Shot 7',
+	info: '7',
+	position: new google.maps.LatLng(33.47784724021086, -117.7128761294625),
+	type: 'parking',
+},
+{
+	name: 'Shot 8',
+	info: '8',
+	position: new google.maps.LatLng(33.47965388165253, -117.7118484283735),
+	type: 'parking',
+},
+{
+	name: 'Shot 9',
+	info: '9',
+	position: new google.maps.LatLng(33.48140756558244, -117.7138216358593),
+	type: 'parking',
+},
+{
+	name: 'Shot 10',
+	info: '10',
+	position: new google.maps.LatLng(33.48170565021135, -117.7105567147743),
+	type: 'parking',
+},
+{
+	name: 'Shot 11',
+	info: '11',
+	position: new google.maps.LatLng(33.47640252192729, -117.715436623349),
+	type: 'parking',
+},
 
     ]
     map.addListener('dragstart',function(){
@@ -145,6 +211,11 @@ function myMap() {
         
     google.maps.event.addListener( marker, 'click', function() {
       //openPano(this.info)
+	console.log(this)
+      if (this.icon === 'pano2.png'){
+        window.open('http://fullcirclethinking.com/monarchbeach//viewSims/'+this.info+'.jpg', '_blank').focus();
+      }
+      else{
       p = latlng2point(this.getPosition());
       var w = document.getElementById('markerCard').clientWidth*.5;
       var h = document.getElementById('markerCard').clientHeight*.5;
@@ -178,6 +249,7 @@ function myMap() {
       document.getElementById("markerTitle").style.opacity = '0';
       $(".markerAnimate").animate({top:"0px",opacity:"1"},750)
       $("#markerCard").animate({opacity:"1"},750)
+      }
     
     });
 
